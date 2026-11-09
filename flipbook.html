@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>카탈로그 넘겨보기 | 세림로보틱스 2026</title>
+<meta name="theme-color" content="#000000">
+<style>
+@font-face{font-family:Freesentation;src:url(assets/fonts/free-600.woff2) format("woff2");font-weight:600;font-display:swap}
+:root{--volt:#60ff00;--volt-ink:#0a1f00}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{height:100vh;height:100dvh}
+body{background:#000;color:#fff;font:600 15px/1.4 Freesentation,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;display:flex;flex-direction:column;overflow:hidden}
+:focus-visible{outline:3px solid var(--volt);outline-offset:3px;border-radius:4px}
+header{display:flex;align-items:center;gap:12px;padding:calc(10px + env(safe-area-inset-top)) 16px 10px}
+header img{height:24px;width:auto}
+header .sp{flex:1}
+a.pill,button.pill{display:inline-flex;align-items:center;gap:6px;text-decoration:none;color:#fff;background:transparent;border:1px solid #3b3f3a;border-radius:999px;padding:9px 14px;font:inherit;cursor:pointer}
+a.pill.volt{background:var(--volt);color:var(--volt-ink);border-color:var(--volt)}
+.stagebox{flex:1;display:flex;align-items:center;justify-content:center;min-height:0;padding:8px 12px}
+#book{margin:0 auto}
+.page{background:#fff}
+.page img{width:100%;height:100%;object-fit:cover;display:block;user-select:none;-webkit-user-drag:none}
+footer{display:flex;align-items:center;justify-content:center;gap:14px;padding:10px 16px calc(14px + env(safe-area-inset-bottom))}
+footer button{width:46px;height:46px;border-radius:50%;border:1px solid #3b3f3a;background:#111;color:#fff;cursor:pointer;display:grid;place-items:center}
+footer button:disabled{opacity:.35;cursor:default}
+footer svg{width:20px;height:20px}
+#count{min-width:84px;text-align:center;color:#c9ccc7;font-variant-numeric:tabular-nums}
+.hint{position:fixed;left:50%;bottom:86px;transform:translateX(-50%);background:rgba(20,22,20,.9);border:1px solid #2c2f2b;padding:8px 14px;border-radius:999px;color:#d6d9d4;font-size:13px;pointer-events:none;transition:opacity .4s}
+</style>
+</head>
+<body>
+<header>
+  <a aria-label="웹 카탈로그로 돌아가기" href="index.html"><img src="assets/img/serim_white.webp" alt="SERIM ROBOTICS"></a>
+  <span class="sp"></span>
+  <a class="pill volt" href="tel:18009633">전화 문의</a>
+</header>
+<div class="stagebox" id="stagebox"><div id="book"></div></div>
+<footer>
+  <button id="prev" aria-label="이전 페이지"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>
+  <span id="count" aria-live="polite">1 / 42</span>
+  <button id="next" aria-label="다음 페이지"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button>
+</footer>
+<div class="hint" id="hint">페이지 모서리를 끌거나 화살표를 눌러 넘겨보세요</div>
+<script src="assets/page-flip.browser.js"></script>
+<script>
+(function(){
+  var N=42, ratio=1698/1200;
+  var book=document.getElementById('book');
+  for(var i=1;i<=N;i++){
+    var d=document.createElement('div');d.className='page';
+    if(i===1||i===N)d.setAttribute('data-density','hard');
+    var im=document.createElement('img');im.alt=i+'쪽';im.src='assets/book/'+(i<10?'0':'')+i+'.webp';
+    if(i>4)im.loading='lazy';
+    d.appendChild(im);book.appendChild(d);
+  }
+  var box=document.getElementById('stagebox');
+  var bw=box.clientWidth-24, bh=Math.max(240,box.clientHeight-16);
+  var portrait=bw<760;
+  var pw=portrait?Math.min(bw,bh/ratio):Math.min(bw/2,bh/ratio);
+  pw=Math.floor(pw);var ph=Math.floor(pw*ratio);
+  var pf=new St.PageFlip(book,{width:pw,height:ph,size:'fixed',showCover:true,usePortrait:portrait,maxShadowOpacity:.45,mobileScrollSupport:false,flippingTime:700});
+  pf.loadFromHTML(document.querySelectorAll('#book .page'));
+  var cnt=document.getElementById('count'),prev=document.getElementById('prev'),next=document.getElementById('next');
+  function upd(){var i=pf.getCurrentPageIndex()+1;cnt.textContent=i+' / '+N;prev.disabled=i<=1;next.disabled=i>=N}
+  var start=parseInt((location.hash||'').slice(1))||1; if(start>1&&start<=N) pf.turnToPage(start-1);
+  pf.on('flip',function(){upd();history.replaceState(null,'','#'+(pf.getCurrentPageIndex()+1))});upd();
+  prev.onclick=function(){pf.flipPrev()};next.onclick=function(){pf.flipNext()};
+  document.addEventListener('keydown',function(e){if(e.key==='ArrowLeft')pf.flipPrev();if(e.key==='ArrowRight')pf.flipNext()});
+  setTimeout(function(){document.getElementById('hint').style.opacity=0},3500);
+  var t;window.addEventListener('resize',function(){clearTimeout(t);t=setTimeout(function(){location.reload()},400)});
+})();
+</script>
+</body>
+</html>
