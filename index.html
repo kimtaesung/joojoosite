@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>세림로보틱스 (SERIM ROBOTICS) | AI 스마트 청소로봇 · 산업용 물류로봇 통합 솔루션</title>
+  <meta
+    name="description"
+    content="서비스 로봇 분야의 글로벌 리더 세림로보틱스. 더스티(DUSTI), 더스티 프로, 스위피(SWEEPI), 스위피 프로, 워시(WASHI), 카고(KARGO) 등 산업·상업 현장 맞춤형 AI 청소로봇 및 물류로봇 솔루션을 만나보세요."
+  />
+  <link rel="icon" href="./images/logo.svg" type="image/svg+xml" />
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;800;900&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    rel="stylesheet"
+    as="style"
+    crossorigin
+    href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css"
+  />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <!-- Ambient Background Glows -->
+  <div class="ambient-glow ambient-glow--1" aria-hidden="true"></div>
+  <div class="ambient-glow ambient-glow--2" aria-hidden="true"></div>
+
+  <!-- Header -->
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a href="#top" class="brand-logo" aria-label="세림로보틱스 홈으로">
+        <svg viewBox="0 0 124 41" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path class="logo-serim" d="M47.685 12.2236H33.3047V16.4875H47.685V12.2236Z" />
+          <path class="logo-serim" d="M84.1484 4H88.6486V25.3191H84.1484V4Z" />
+          <path class="logo-serim" d="M107.499 21.3591L98.167 10.0601L98.258 13.1353V25.3191H93.7578V4H98.258L108.88 16.8531L119.503 4H124.003V25.3191H119.503V13.1353L119.592 10.0601L110.229 21.3591H107.499Z" />
+          <path class="logo-serim" d="M31.51 8.26383H49.7837V4H27.0078V25.3191H50.3823V21.0553H31.51V8.26383Z" />
+          <path class="logo-serim" d="M71.3339 17.5531H71.6049C76.0161 17.5531 79.6465 15.8779 79.6465 10.8525C76.0464 4 71.5442 4 71.5442 4H54.8906V25.3191H59.3908V8.26383H71.6939C73.674 8.26383 75.0533 8.93306 75.0533 10.8525C75.0533 12.7719 73.674 13.4412 71.6939 13.4412H63.6685V16.0196L73.583 25.3191H80.5445L71.3319 17.5531H71.3339Z" />
+          <path class="logo-serim" d="M4.89051 8.26383H22.7738V4H4.24936C1.86681 4 0 5.89481 0 8.31309V12.2115C0 14.5887 1.90523 16.5246 4.24936 16.5246H17.6103C17.8186 16.5246 18.0006 16.695 18.0006 16.89V20.6612C18.0006 20.8644 17.8105 21.0553 17.6103 21.0553H0V25.3191H18.2514C20.634 25.3191 22.5008 23.4243 22.5008 21.006V16.5349C22.5008 14.1576 20.5955 12.2218 18.2514 12.2218H4.89051C4.68421 12.2218 4.50218 12.0514 4.50218 11.8564V8.65798C4.50218 8.45474 4.6923 8.26383 4.89051 8.26383Z" />
+          <path class="logo-robotics" d="M98.4141 30.798V35.3062C98.4141 36.1643 99.0775 36.8376 99.9229 36.8376H107.513V35.4458H99.9229C99.8521 35.4458 99.7853 35.378 99.7853 35.3062V30.798C99.7853 30.7262 99.8521 30.6585 99.9229 30.6585H107.513V29.2666H99.9229C99.0775 29.2666 98.4141 29.9399 98.4141 30.798Z" />
+          <path class="logo-robotics" d="M0 29.2668H5.91391C7.51172 29.2668 8.78996 29.8827 8.78996 31.7016C8.78996 33.5204 7.48947 34.0911 5.92402 34.0911H5.64694L9.09941 36.8379H6.96766L3.70732 34.1342H1.37331V36.8379H0V29.2668ZM5.94627 32.8245C6.77754 32.8245 7.3843 32.5432 7.3843 31.6995C7.3843 30.8558 6.78765 30.5643 5.95638 30.5643H1.37331V32.8245H5.94627Z" />
+          <path class="logo-robotics" d="M22.1953 29.1064C25.488 29.1064 27.2031 30.8042 27.2031 33.0541C27.2031 35.3041 25.488 37.0018 22.1953 37.0018C18.9026 37.0018 17.1875 35.3041 17.1875 33.0541C17.1875 30.8042 18.9026 29.1064 22.1953 29.1064ZM22.1953 35.6921C24.6446 35.6921 25.7975 34.5897 25.7975 33.0541C25.7975 31.5186 24.6466 30.4039 22.1953 30.4039C19.744 30.4039 18.5831 31.5083 18.5831 33.0541C18.5831 34.5999 19.744 35.6921 22.1953 35.6921Z" />
+          <path class="logo-robotics" d="M35.8281 36.8376V29.2666H41.7299C43.3722 29.2666 44.4482 29.7757 44.4482 31.1922C44.4482 32.0462 44.0437 32.5225 43.4248 32.8242C44.341 33.085 44.9801 33.6351 44.9801 34.7396C44.9801 35.9836 44.2116 36.8376 42.2962 36.8376H35.8281ZM37.2014 30.564V32.2946H41.6126C42.6461 32.2946 43.1578 32.1119 43.1578 31.4406C43.1578 30.7693 42.7209 30.564 41.7299 30.564H37.2014ZM37.2014 33.592V35.5279H42.2962C43.2974 35.5279 43.6918 35.1912 43.6918 34.5425C43.6918 33.8178 43.1699 33.59 42.1668 33.59H37.2014V33.592Z" />
+          <path class="logo-robotics" d="M58.3984 29.1064C61.6911 29.1064 63.4062 30.8042 63.4062 33.0541C63.4062 35.3041 61.6911 37.0018 58.3984 37.0018C55.1057 37.0018 53.3906 35.3041 53.3906 33.0541C53.3906 30.8042 55.1057 29.1064 58.3984 29.1064ZM58.3984 35.6921C60.8477 35.6921 62.0006 34.5897 62.0006 33.0541C62.0006 31.5186 60.8498 30.4039 58.3984 30.4039C55.9471 30.4039 54.7862 31.5083 54.7862 33.0541C54.7862 34.5999 55.9471 35.6921 58.3984 35.6921Z" />
+          <path class="logo-robotics" d="M76.3883 30.5665V36.8401H75.013V30.5665H71.3906V29.269H80.0208V30.5665H76.3883Z" />
+          <path class="logo-robotics" d="M88.4219 29.2666H89.7952V36.8376H88.4219V29.2666Z" />
+          <path class="logo-robotics" d="M117.517 30.6585H123.999V29.2666H117.517C116.671 29.2666 116.008 29.9399 116.008 30.798V32.1837C116.008 33.0275 116.685 33.7152 117.517 33.7152H122.49C122.563 33.7152 122.628 33.7747 122.628 33.8445V35.3062C122.628 35.378 122.561 35.4458 122.49 35.4458H116.008V36.8376H122.49C123.335 36.8376 123.999 36.1643 123.999 35.3062V33.8445C123.999 33.0008 123.321 32.3131 122.49 32.3131H117.517C117.444 32.3131 117.379 32.2535 117.379 32.1837V30.798C117.379 30.7262 117.446 30.6585 117.517 30.6585Z" />
+        </svg>
+      </a>
+
+      <nav class="main-nav" id="mainNav">
+        <a href="#why-serim">도입 배경</a>
+        <a href="#lineup">6대 로봇 라인업</a>
+        <a href="#recommender">맞춤 로봇 추천</a>
+        <a href="#comparison">제원 비교</a>
+        <a href="#industries">10대 산업 솔루션</a>
+        <a href="#brochures">PDF 소개서</a>
+        <a href="#contact">무료 시연·문의</a>
+      </nav>
+
+      <div class="header-actions">
+        <button
+          type="button"
+          class="theme-toggle-btn"
+          id="themeToggleBtn"
+          title="다크 모드로 전환"
+          aria-label="테마 색상 전환"
+        >
+          🌙
+        </button>
+        <button type="button" class="btn btn-outline btn-sm" onclick="openVideoModal(0)">
+          🎬 홍보영상
+        </button>
+        <a
+          href="https://www.serimrobotics.co.kr/main/main.html"
+          target="_blank"
+          rel="noopener"
+          class="btn btn-outline btn-sm"
+        >
+          공식 사이트 ↗
+        </a>
+        <a href="#contact" class="btn btn-primary btn-sm">무료 체험 신청</a>
+        <button type="button" class="mobile-menu-btn" id="mobileMenuBtn" aria-label="메뉴 열기">
+          ☰
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- 1. HERO SECTION -->
+    <section class="hero-section">
+      <div class="container">
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <div class="hero-eyebrow">
+              <span class="pulse-dot"></span>
+              <span>SERIM ROBOTICS · 서비스 로봇 분야의 글로벌 리더</span>
+            </div>
+            <h1 class="hero-title">
+              공간의 한계를 넘는<br />
+              <span class="highlight">AI 자율 청소 &amp; 물류 로봇</span><br />
+              스마트 통합 솔루션
+            </h1>
+            <p class="hero-subtitle">
+              100,000㎡ 초대형 물류·제조 현장부터 호텔, 병원, 오피스, 외식 매장까지.
+              세림로보틱스는 고객의 도입 목적과 공간에 가장 완벽한 AI 스마트 로봇을 설계·제안합니다.
+            </p>
+            <div class="hero-cta-group">
+              <a href="#lineup" class="btn btn-primary">6종 로봇 라인업 살펴보기 →</a>
+              <a href="#recommender" class="btn btn-secondary">우리 사업장 맞춤 로봇 찾기</a>
+              <button type="button" class="btn btn-outline" onclick="openVideoModal(0)">
+                ▶ 공식 홍보영상 보기
+              </button>
+              <button type="button" class="btn btn-outline font-tech" onclick="handlePhoneAction('1800-9633')">
+                📞 1800-9633
+              </button>
+            </div>
+            <div class="hero-quick-tags" role="group" aria-label="주력 로봇 빠른 선택">
+              <button type="button" class="hero-tag active" data-robot="dusti"># 더스티 (DUSTI)</button>
+              <button type="button" class="hero-tag" data-robot="dusti-pro"># 더스티 프로 (DUSTI PRO)</button>
+              <button type="button" class="hero-tag" data-robot="sweepi"># 스위피 (SWEEPI)</button>
+              <button type="button" class="hero-tag" data-robot="sweepi-pro"># 스위피 프로 (SWEEPI PRO)</button>
+              <button type="button" class="hero-tag" data-robot="washi"># 워시 (WASHI)</button>
+              <button type="button" class="hero-tag" data-robot="kargo"># 카고 (KARGO 300kg)</button>
+            </div>
+          </div>
+
+          <!-- Interactive Hero Robot Showcase -->
+          <div class="hero-showcase">
+            <div class="showcase-stage">
+              <button
+                type="button"
+                class="showcase-nav-arrow showcase-nav-arrow--prev"
+                id="heroPrevBtn"
+                aria-label="이전 로봇"
+              >
+                ‹
+              </button>
+              <button
+                type="button"
+                class="showcase-nav-arrow showcase-nav-arrow--next"
+                id="heroNextBtn"
+                aria-label="다음 로봇"
+              >
+                ›
+              </button>
+              <div class="showcase-badge-floating">
+                <div class="model-code font-tech" id="heroModelCode">DUSTI</div>
+                <div class="model-Highlight" id="heroModelHighlight">최대 6,000㎡/h 스팟 청소</div>
+              </div>
+              <img
+                id="heroRobotImg"
+                src="./images/dusti-render.png"
+                alt="세림로보틱스 주력 로봇"
+                style="cursor:pointer;"
+                onclick="document.getElementById('heroDetailBtn').click()"
+              />
+            </div>
+
+            <div class="showcase-metrics-mini" id="heroMiniMetrics">
+              <!-- JS로 실시간 렌더링 -->
+            </div>
+
+            <div class="showcase-info-bar">
+              <div>
+                <h3 id="heroModelTitle">더스티 (DUSTI)</h3>
+                <p id="heroModelDesc">세계 최초 대규모 공간(100,000㎡) AI 스마트 건식 청소 로봇</p>
+              </div>
+              <div style="display:flex; gap:8px; flex-shrink:0;">
+                <button type="button" class="btn btn-primary btn-sm" id="heroDetailBtn">
+                  🔍 상세 제원
+                </button>
+                <button type="button" class="btn btn-outline btn-sm" id="heroPdfBtn">
+                  📄 PDF 보기
+                </button>
+              </div>
+            </div>
+
+            <div class="showcase-switcher" role="tablist" aria-label="대표 로봇 선택">
+              <button type="button" class="switcher-btn active" data-robot="dusti">더스티</button>
+              <button type="button" class="switcher-btn" data-robot="dusti-pro">더스티 프로</button>
+              <button type="button" class="switcher-btn" data-robot="sweepi">스위피</button>
+              <button type="button" class="switcher-btn" data-robot="sweepi-pro">스위피 프로</button>
+              <button type="button" class="switcher-btn" data-robot="washi">워시</button>
+              <button type="button" class="switcher-btn" data-robot="kargo">카고</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Global Track Record Counters -->
+        <div class="stats-strip">
+          <div class="stat-card">
+            <div class="stat-number font-tech">TOP 1</div>
+            <div class="stat-label">글로벌 상업용 서비스 로봇 시장점유율</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number font-tech" data-count="80000" data-suffix="+">80,000+</div>
+            <div class="stat-label">글로벌 누적 로봇 출하량 (대)</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number font-tech" data-count="1600" data-suffix="+">1,600+</div>
+            <div class="stat-label">보유 핵심 기술 특허 (애플리케이션 포함)</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number font-tech" data-count="60" data-suffix="+">60+</div>
+            <div class="stat-label">전 세계 글로벌 도입·판매 국가</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. PAIN POINT VS SOLUTION SECTION -->
+    <section id="why-serim">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge">WHY SERIM ROBOTICS</span>
+          <h2 class="section-title">
+            현장의 반복되는 인력·관리 고민,<br />
+            <span class="highlight">세림 AI 로봇</span>으로 한 번에 해결하세요
+          </h2>
+          <p class="section-desc">
+            단순 자동화를 넘어 AI 비전 인식과 완전 무인 워크스테이션 기술로 현장의 운영 패러다임을 바꿉니다.
+          </p>
+        </div>
+
+        <div class="pain-solution-grid">
+          <div class="ps-card ps-card--pain">
+            <div>
+              <span class="ps-tag">현장의 고민 (BEFORE)</span>
+              <h3>"구인난과 인건비 부담, 넓은 매장·공장 청소를 어떻게 유지하죠?"</h3>
+            </div>
+            <div class="ps-content-wrap">
+              <ul class="ps-list">
+                <li>
+                  <strong>01. 만성적인 구인난과 높은 이직률</strong>
+                  <span>고강도 반복 청소 및 중량물 운반 기피로 현장 인력 채용·유지가 갈수록 어렵습니다.</span>
+                </li>
+                <li>
+                  <strong>02. 매년 상승하는 고정 인건비·운영비</strong>
+                  <span>야간 작업 수당, 외주 미화 비용, 물·세정제 과다 사용으로 관리비 부담이 가중됩니다.</span>
+                </li>
+                <li>
+                  <strong>03. 작업자마다 편차가 큰 청소 품질</strong>
+                  <span>수작업 특성상 사각지대가 발생하고 청소 완료 여부를 객관적으로 확인하기 어렵습니다.</span>
+                </li>
+                <li>
+                  <strong>04. 미끄럼 및 산업재해 안전 리스크</strong>
+                  <span>젖은 바닥 미끄럼 사고나 무거운 자재 이동 중 근골격계 질환·충돌 위험이 상존합니다.</span>
+                </li>
+              </ul>
+              <div class="ps-visual">
+                <img src="./images/image1.png" alt="현장 관리와 인력 문제로 고민하는 담당자" loading="lazy" />
+              </div>
+            </div>
+          </div>
+
+          <div class="ps-card ps-card--solution">
+            <div>
+              <span class="ps-tag">세림로보틱스 해답 (AFTER)</span>
+              <h3>"24/7 무인 AI 로봇이 청소부터 중량물 운송까지 알아서 완벽하게!"</h3>
+            </div>
+            <div class="ps-content-wrap">
+              <ul class="ps-list">
+                <li>
+                  <strong>01. 24시간 무인 연속 가동 (자동 충전·급배수)</strong>
+                  <span>배터리 부족 시 스스로 충전소로 복귀하고 정·오수를 자동 교체해 365일 멈추지 않습니다.</span>
+                </li>
+                <li>
+                  <strong>02. 청소 시간 70% 단축 &amp; 자원 80% 절감</strong>
+                  <span>AI 스팟 청소로 오염 구역만 집중 케어하고 물과 세정제, 에너지 소비를 획기적으로 줄입니다.</span>
+                </li>
+                <li>
+                  <strong>03. AI 히트맵 &amp; 디지털 클리닝 리포트</strong>
+                  <span>전·후면 AI 카메라로 청결도를 검증하고 모바일/PC로 실시간 작업 보고서를 제공합니다.</span>
+                </li>
+                <li>
+                  <strong>04. IoT 엘리베이터·게이트 완벽 통합</strong>
+                  <span>엘리베이터와 출입문 게이트를 스스로 호출·통과하여 다층 빌딩도 완전 자율 주행합니다.</span>
+                </li>
+              </ul>
+              <div class="ps-visual">
+                <img src="./images/image2.png" alt="친근하게 인사하는 세림 AI 청소로봇 마스코트" loading="lazy" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. 6대 로봇 라인업 쇼케이스 -->
+    <section id="lineup" style="background: var(--bg-secondary);">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge">PRODUCT LINEUP</span>
+          <h2 class="section-title">
+            세림로보틱스 <span class="highlight">6대 핵심 로봇 라인업</span>
+          </h2>
+          <p class="section-desc">
+            카테고리 버튼을 클릭하여 제품을 필터링하거나, 각 카드의 버튼으로 상세 제원과 공식 PDF 소개서를 바로 확인하세요.
+          </p>
+        </div>
+
+        <div class="filter-tabs" role="tablist">
+          <button type="button" class="filter-tab active" data-filter="all">전체 라인업 (6)</button>
+          <button type="button" class="filter-tab" data-filter="dry">
+            대형 건식·진공 AI 청소로봇 (더스티 / 더스티 프로)
+          </button>
+          <button type="button" class="filter-tab" data-filter="allinone">
+            4-in-1 습식·건식 올인원 (스위피 / 스위피 프로)
+          </button>
+          <button type="button" class="filter-tab" data-filter="scrubber">
+            직립형 고압 스크러버 (워시)
+          </button>
+          <button type="button" class="filter-tab" data-filter="logistics">
+            산업용 300kg 물류로봇 (카고)
+          </button>
+        </div>
+
+        <div class="products-grid" id="productsGrid">
+          <!-- JS로 6종 제품 카드가 렌더링됩니다 -->
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. 인터랙티브 맞춤 로봇 추천 & ROI 시뮬레이터 -->
+    <section id="recommender">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge">SMART ROBOT FINDER &amp; ROI</span>
+          <h2 class="section-title">
+            우리 현장에 딱 맞는 <span class="highlight">맞춤 로봇 &amp; 절감 효과</span> 진단
+          </h2>
+          <p class="section-desc">
+            STEP 1~3 버튼을 클릭해 보세요. 선택하신 조건에 맞춰 최적 로봇 모델과 예상 ROI가 실시간으로 재계산됩니다.
+          </p>
+        </div>
+
+        <div class="recommender-box">
+          <div class="rec-controls">
+            <div class="rec-step">
+              <h4>STEP 1. 어떤 공간에 도입하시나요? (클릭하여 선택)</h4>
+              <div class="rec-options">
+                <button type="button" class="rec-option-btn active" data-rec-env="warehouse">
+                  🏭 물류창고 · 제조공장 · 주차장
+                </button>
+                <button type="button" class="rec-option-btn" data-rec-env="office">
+                  🏢 오피스 빌딩 · 병원 · 호텔 · 학교
+                </button>
+                <button type="button" class="rec-option-btn" data-rec-env="retail">
+                  🛒 대형마트 · 쇼핑몰 · 전시장 · 공항
+                </button>
+                <button type="button" class="rec-option-btn" data-rec-env="restaurant">
+                  🍽️ 대형 식당 · 주방 · 카페 · 상업매장
+                </button>
+              </div>
+            </div>
+
+            <div class="rec-step">
+              <h4>STEP 2. 가장 해결하고 싶은 핵심 과제는 무엇인가요?</h4>
+              <div class="rec-options">
+                <button type="button" class="rec-option-btn active" data-rec-task="dry-large">
+                  🌪️ 대면적 분진·먼지·대형 쓰레기 건식/진공 청소
+                </button>
+                <button type="button" class="rec-option-btn" data-rec-task="allinone">
+                  💧 쓸기 + 진공 + 물걸레 + 오수회수 4-in-1 무인 청소
+                </button>
+                <button type="button" class="rec-option-btn" data-rec-task="greasy">
+                  ✨ 기름때·미끄러운 바닥 27kg 고압 세척 및 즉각 건조
+                </button>
+                <button type="button" class="rec-option-btn" data-rec-task="cargo">
+                  📦 최대 300kg 자재·박스·대차 자율주행 운송 (AMR)
+                </button>
+              </div>
+            </div>
+
+            <div class="rec-step" style="margin-bottom:0;">
+              <h4>STEP 3. 관리 대상 면적(평수) 슬라이더 또는 빠른 선택 버튼</h4>
+              <div class="area-slider-wrap">
+                <div class="area-slider-header">
+                  <span>관리 공간 규모</span>
+                  <strong class="font-tech" id="areaValueDisplay">1,500평 (약 4,959㎡)</strong>
+                </div>
+                <input
+                  type="range"
+                  id="areaRangeInput"
+                  min="100"
+                  max="30000"
+                  step="100"
+                  value="1500"
+                  aria-label="공간 면적 평수 선택"
+                />
+                <div class="area-preset-btns">
+                  <button type="button" class="area-preset-btn" data-pyeong="300">300평 (매장/식당)</button>
+                  <button type="button" class="area-preset-btn active" data-pyeong="1500">1,500평 (빌딩/병원)</button>
+                  <button type="button" class="area-preset-btn" data-pyeong="3000">3,000평 (대형마트/공장)</button>
+                  <button type="button" class="area-preset-btn" data-pyeong="10000">10,000평 (물류센터)</button>
+                  <button type="button" class="area-preset-btn" data-pyeong="30000">30,000평 (10만㎡ 메가센터)</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="rec-result-card" id="recResultCard">
+            <div>
+              <span class="section-badge" id="recRobotBadge">대규모 건식 AI 청소 · 권장 1대</span>
+              <div class="rec-result-header">
+                <img id="recRobotImg" src="./images/dusti-render.png" alt="추천 로봇 이미지" />
+                <div>
+                  <p style="font-size:0.84rem; color:var(--accent-primary); font-weight:800;">AI 최적 매칭 모델</p>
+                  <h3 style="font-size:1.75rem; font-weight:900;" id="recRobotName">더스티 (DUSTI)</h3>
+                </div>
+              </div>
+              <p style="color:var(--text-secondary); font-size:0.92rem;" id="recRobotReason">
+                운전식 청소 장비에 필적하는 청소 효과와 업계 최고 수준의 멀티 센서·AI 비전 인식 시스템을 융합하여 초대형 공간을 24시간 무인으로 관리합니다.
+              </p>
+
+              <div class="rec-roi-grid">
+                <div class="rec-roi-item">
+                  <span>권장 도입 대수 · 일 가동시간</span>
+                  <strong class="font-tech" id="roiUnits">1대 (일 약 1.5시간 가동)</strong>
+                </div>
+                <div class="rec-roi-item">
+                  <span>핵심 작업 성능</span>
+                  <strong class="font-tech" id="roiEfficiency">최대 6,000㎡/h 스팟 청소</strong>
+                </div>
+                <div class="rec-roi-item">
+                  <span>예상 반복 작업 절감 시간</span>
+                  <strong class="font-tech" id="roiHours">월 약 299시간 단축</strong>
+                </div>
+                <div class="rec-roi-item">
+                  <span>예상 운영·인건비 절감 가치</span>
+                  <strong class="font-tech" id="roiCost">연 약 5,310만원 절감</strong>
+                </div>
+              </div>
+            </div>
+
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px;">
+              <button type="button" class="btn btn-outline btn-sm" id="recModalBtn">
+                🔍 상세 제원 보기
+              </button>
+              <button type="button" class="btn btn-outline btn-sm" id="recPdfBtn">
+                📄 PDF 소개서 미리보기
+              </button>
+              <button type="button" class="btn btn-primary" id="recConsultBtn" style="grid-column: 1 / -1;">
+                ✍️ 이 모델로 무료 시연 · 맞춤 견적 신청하기 →
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. 6종 로봇 한눈에 보는 상세 제원 비교표 -->
+    <section id="comparison" style="background: var(--bg-secondary);">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge">SPECIFICATIONS COMPARISON</span>
+          <h2 class="section-title">
+            6종 로봇 <span class="highlight">핵심 사양 한눈에 비교하기</span>
+          </h2>
+          <p class="section-desc">
+            제품소개서(PDF) 기준 공식 제원 데이터입니다. 표 하단의 버튼으로 각 제품의 상세 모달이나 PDF를 바로 열 수 있습니다.
+          </p>
+        </div>
+
+        <div class="table-responsive">
+          <table class="spec-table">
+            <thead>
+              <tr>
+                <th>비교 항목</th>
+                <th class="highlight-col">더스티 (DUSTI)</th>
+                <th class="highlight-col">더스티 프로 (DUSTI PRO)</th>
+                <th>스위피 (SWEEPI)</th>
+                <th class="highlight-col">스위피 프로 (SWEEPI PRO)</th>
+                <th>워시 (WASHI)</th>
+                <th>카고 (KARGO)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>제품 포지션</td>
+                <td>초대형 건식 AI 청소로봇</td>
+                <td>3-in-1 대용량 진공·스위핑 로봇</td>
+                <td>4-in-1 습·건식 상업용 청소로봇</td>
+                <td>전·후면 AI 자율 습·건식 청소로봇</td>
+                <td>직립형 고압 스크러버 드라이어</td>
+                <td>산업용 300kg 자율주행 물류로봇</td>
+              </tr>
+              <tr>
+                <td>크기 (L×W×H)</td>
+                <td class="font-tech">840 × 600 × 490 mm</td>
+                <td class="font-tech">840 × 600 × 490 mm</td>
+                <td class="font-tech">552 × 625 × 690 mm</td>
+                <td class="font-tech">552 × 629 × 695 mm</td>
+                <td class="font-tech">490 × 530 × 1200 mm</td>
+                <td class="font-tech">835 × 500 × 135 mm</td>
+              </tr>
+              <tr>
+                <td>본체 무게</td>
+                <td class="font-tech">65 kg</td>
+                <td class="font-tech">75 kg</td>
+                <td class="font-tech">75 kg</td>
+                <td class="font-tech">75 kg</td>
+                <td class="font-tech">27 kg</td>
+                <td class="font-tech">65 kg (적재 300kg)</td>
+              </tr>
+              <tr>
+                <td>시간당 최대 효율</td>
+                <td>표준 1,800㎡/h<br /><strong>스팟 6,000㎡/h</strong></td>
+                <td><strong>최대 1,400㎡/h</strong><br />(듀얼팬 진공 200% 향상)</td>
+                <td><strong>최대 1,000㎡/h</strong><br />(17,000Pa 흡입)</td>
+                <td>전체 700~1,000㎡/h<br /><strong>AI 집중 1,500~3,000㎡/h</strong></td>
+                <td><strong>1,100 ~ 1,600㎡/h</strong><br />(27kg 압력·350RPM)</td>
+                <td>최대 주행속도 <strong>1.2 m/s</strong><br />(최대 20대 군집 협업)</td>
+              </tr>
+              <tr>
+                <td>용량 (쓰레기/물/하중)</td>
+                <td>쓰레기통 <strong>35 L</strong></td>
+                <td>더스트백 <strong>14 L</strong> (7L×2)<br />+ 쓰레기통 <strong>6 L</strong></td>
+                <td>정수 <strong>15 L</strong> / 오수 <strong>15 L</strong></td>
+                <td>정수 <strong>15 L</strong> / 오수 <strong>15 L</strong><br />먼지통 2.5L / 봉투 6L</td>
+                <td>정수 <strong>4 L</strong> / 오수 <strong>4 L</strong><br />(공기·고체·액체 3중분리)</td>
+                <td>최대 적재하중 <strong>300 kg</strong><br />(표준/선반/리프팅/견인)</td>
+              </tr>
+              <tr>
+                <td>배터리 및 러닝타임</td>
+                <td>45Ah / <strong>4 ~ 8시간</strong><br />(3시간 급속충전)</td>
+                <td>45Ah / <strong>3 ~ 6.5시간</strong><br />(자동 충전 도킹)</td>
+                <td>50Ah / <strong>5 ~ 9시간</strong><br />(워크스테이션 자동충전)</td>
+                <td>50Ah / <strong>4 ~ 9시간</strong><br />(워크스테이션 급배수·충전)</td>
+                <td>18Ah / <strong>70 ~ 100분</strong><br />(탈부착 교체형·2.5h 충전)</td>
+                <td>30Ah / <strong>6 ~ 12시간</strong><br />(2h 급속충전·배터리 교체)</td>
+              </tr>
+              <tr>
+                <td>청소폭 / 최소 주행폭</td>
+                <td>청소폭 70cm / 통로 75cm</td>
+                <td>진공 55cm·일반 70cm<br />통로 75cm (높이 52cm 통과)</td>
+                <td>청소폭 50cm / 통로 70cm</td>
+                <td>청소폭 50cm / 통로 70cm</td>
+                <td>청소 44cm / 스퀴지 49cm</td>
+                <td>최소 주행폭 <strong>60 cm</strong><br />(턱 20mm·홈 35mm 극복)</td>
+              </tr>
+              <tr>
+                <td>차별화 핵심 기술</td>
+                <td>AI 시각 쓰레기 식별, 미세먼지 필터링, 수동핸들</td>
+                <td>HEPA 13(99.97%), 핸드 배큠 확장팩, AI 바닥인식</td>
+                <td>엣지마스터 근접청소, 자동 급수·배수, 70dB 저소음</td>
+                <td>후면 AI 카메라 얼룩·도구 감시, 히트맵·핫스팟 지도</td>
+                <td>20,000Pa 즉각건조, 수직 유리/벽면·25° 저상 청소</td>
+                <td>VSLAM+ 마커리스(30m 천장), 팔로우·파워어시스트</td>
+              </tr>
+              <tr>
+                <td>상세 확인 및 소개서</td>
+                <td>
+                  <div style="display:flex; gap:6px; flex-wrap:wrap;">
+                    <button type="button" class="btn btn-primary btn-sm" onclick="openProductModal('dusti')">상세</button>
+                    <button type="button" class="btn btn-outline btn-sm" onclick="openPdfPreviewModal('dusti')">PDF</button>
+                  </div>
+                </td>
+                <td>
+                  <div style="display:flex; gap:6px; flex-wrap:wrap;">
+                    <button type="button" class="btn btn-primary btn-sm" onclick="openProductModal('dusti-pro')">상세</button>
+                    <button type="button" class="btn btn-outline btn-sm" onclick="openPdfPreviewModal('dusti-pro')">PDF</button>
+                  </div>
+                </td>
+                <td>
+                  <div style="display:flex; gap:6px; flex-wrap:wrap;">
+                    <button type="button" class="btn btn-primary btn-sm" onclick="openProductModal('sweepi')">상세</button>
+                    <button type="button" class="btn btn-outline btn-sm" onclick="openPdfPreviewModal('sweepi')">PDF</button>
+                  </div>
+                </td>
+                <td>
+                  <div style="display:flex; gap:6px; flex-wrap:wrap;">
+                    <button type="button" class="btn btn-primary btn-sm" onclick="openProductModal('sweepi-pro')">상세</button>
+                    <button type="button" class="btn btn-outline btn-sm" onclick="openPdfPreviewModal('sweepi-pro')">PDF</button>
+                  </div>
+                </td>
+                <td>
+                  <div style="display:flex; gap:6px; flex-wrap:wrap;">
+                    <button type="button" class="btn btn-primary btn-sm" onclick="openProductModal('washi')">상세</button>
+                    <button type="button" class="btn btn-outline btn-sm" onclick="openPdfPreviewModal('washi')">PDF</button>
+                  </div>
+                </td>
+                <td>
+                  <div style="display:flex; gap:6px; flex-wrap:wrap;">
+                    <button type="button" class="btn btn-primary btn-sm" onclick="openProductModal('kargo')">상세</button>
+                    <button type="button" class="btn btn-outline btn-sm" onclick="openPdfPreviewModal('kargo')">PDF</button>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. 10대 산업별 맞춤 솔루션 -->
+    <section id="industries">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge">10 INDUSTRY SOLUTIONS</span>
+          <h2 class="section-title">
+            스마트 로봇 솔루션으로 완성하는 <span class="highlight">10대 산업 혁신</span>
+          </h2>
+          <p class="section-desc">
+            업종 탭을 클릭하면 해당 산업군에 최적화된 추천 로봇과 핵심 도입 효과를 확인할 수 있습니다.
+          </p>
+        </div>
+
+        <div class="industry-pills" id="industryPills">
+          <!-- JS로 10대 산업 탭 렌더링 -->
+        </div>
+
+        <div class="industry-display">
+          <div>
+            <span class="section-badge">INDUSTRY CUSTOMIZED LINEUP</span>
+            <h3 style="font-size:1.8rem; font-weight:900; margin-bottom:10px;" id="indTitle">
+              호텔 · 리조트 맞춤 스마트 로봇 솔루션
+            </h3>
+            <p style="color:var(--text-secondary); margin-bottom:16px;" id="indDesc">
+              24시간 로비·복도 카펫 및 대리석 자동 청소로 최고급 호텔의 위생 품격을 유지하고 야간 미화 인력 부담을 줄입니다.
+            </p>
+            <div style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom:20px;" id="indRobotChips">
+              <!-- JS로 추천 로봇 바로가기 버튼 렌더링 -->
+            </div>
+            <div style="background:var(--gradient-stage); border:1px solid var(--border-subtle); border-radius:18px; padding:18px; text-align:center; margin-bottom:16px;">
+              <img
+                id="indImage"
+                src="./images/sweepi-pro-render.png"
+                alt="세림로보틱스 산업별 로봇 라인업"
+                style="max-height:190px; margin:0 auto;"
+                loading="lazy"
+              />
+            </div>
+            <button type="button" class="btn btn-primary" style="width:100%;" id="indConsultBtn">
+              ✍️ 이 산업군 맞춤 로봇 시연 · 견적 문의하기 →
+            </button>
+          </div>
+          <div class="industry-benefits" id="indBenefits">
+            <!-- JS로 산업별 3대 도입 효과 렌더링 -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. 공식 제품소개서 (PDF 자료실) -->
+    <section id="brochures" style="background: var(--bg-secondary);">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge">OFFICIAL BROCHURES (PDF)</span>
+          <h2 class="section-title">
+            전 제품 <span class="highlight">공식 제품소개서 자료실</span>
+          </h2>
+          <p class="section-desc">
+            페이지 내에서 바로 미리보기 모달로 열람하거나, 원본 PDF 파일을 다운로드하실 수 있습니다.
+          </p>
+        </div>
+
+        <div class="docs-grid">
+          <div class="doc-card">
+            <div class="doc-card__top">
+              <div class="doc-icon font-tech">PDF</div>
+              <div>
+                <h4>더스티 (DUSTI) 제품소개서</h4>
+                <p>AI 스마트 초대형 건식 청소로봇 · 16 Pages</p>
+              </div>
+            </div>
+            <div class="doc-actions">
+              <button type="button" class="btn btn-outline btn-sm" onclick="openPdfPreviewModal('dusti')">
+                📄 미리보기
+              </button>
+              <a
+                href="./docs/%EB%8D%94%EC%8A%A4%ED%8B%B0%20%EC%A0%9C%ED%92%88%EC%86%8C%EA%B0%9C%EC%84%9C.pdf"
+                download="더스티_제품소개서.pdf"
+                class="btn btn-primary btn-sm"
+                onclick="showToast('📥 더스티 제품소개서 다운로드가 시작되었습니다.')"
+              >
+                ⬇️ 다운로드
+              </a>
+            </div>
+          </div>
+
+          <div class="doc-card">
+            <div class="doc-card__top">
+              <div class="doc-icon font-tech">PDF</div>
+              <div>
+                <h4>더스티 프로 (DUSTI PRO) 제품소개서</h4>
+                <p>3-in-1 고효율 진공·HEPA 13 AI 청소로봇 · 20 Pages</p>
+              </div>
+            </div>
+            <div class="doc-actions">
+              <button type="button" class="btn btn-outline btn-sm" onclick="openPdfPreviewModal('dusti-pro')">
+                📄 미리보기
+              </button>
+              <a
+                href="./docs/%EB%8D%94%EC%8A%A4%ED%8B%B0%20%ED%94%84%EB%A1%9C%20%EC%A0%9C%ED%92%88%EC%86%8C%EA%B0%9C%EC%84%9C.pdf"
+                download="더스티_프로_제품소개서.pdf"
+                class="btn btn-primary btn-sm"
+                onclick="showToast('📥 더스티 프로 제품소개서 다운로드가 시작되었습니다.')"
+              >
+                ⬇️ 다운로드
+              </a>
+            </div>
+          </div>
+
+          <div class="doc-card">
+            <div class="doc-card__top">
+              <div class="doc-icon font-tech">PDF</div>
+              <div>
+                <h4>스위피 (SWEEPI) 제품소개서</h4>
+                <p>4-in-1 지능형 상업용 올인원 청소로봇 · 20 Pages</p>
+              </div>
+            </div>
+            <div class="doc-actions">
+              <button type="button" class="btn btn-outline btn-sm" onclick="openPdfPreviewModal('sweepi')">
+                📄 미리보기
+              </button>
+              <a
+                href="./docs/%EC%8A%A4%EC%9C%84%ED%94%BC%20%EC%A0%9C%ED%92%88%EC%86%8C%EA%B0%9C%EC%84%9C.pdf"
+                download="스위피_제품소개서.pdf"
+                class="btn btn-primary btn-sm"
+                onclick="showToast('📥 스위피 제품소개서 다운로드가 시작되었습니다.')"
+              >
+                ⬇️ 다운로드
+              </a>
+            </div>
+          </div>
+
+          <div class="doc-card">
+            <div class="doc-card__top">
+              <div class="doc-icon font-tech">PDF</div>
+              <div>
+                <h4>스위피 프로 (SWEEPI PRO) 제품소개서</h4>
+                <p>전·후면 AI 카메라 기반 완전 자율 청소로봇 · 20 Pages</p>
+              </div>
+            </div>
+            <div class="doc-actions">
+              <button type="button" class="btn btn-outline btn-sm" onclick="openPdfPreviewModal('sweepi-pro')">
+                📄 미리보기
+              </button>
+              <a
+                href="./docs/%EC%8A%A4%EC%9C%84%ED%94%BC%20%ED%94%84%EB%A1%9C%20%EC%A0%9C%ED%92%88%EC%86%8C%EA%B0%9C%EC%84%9C.pdf"
+                download="스위피_프로_제품소개서.pdf"
+                class="btn btn-primary btn-sm"
+                onclick="showToast('📥 스위피 프로 제품소개서 다운로드가 시작되었습니다.')"
+              >
+                ⬇️ 다운로드
+              </a>
+            </div>
+          </div>
+
+          <div class="doc-card">
+            <div class="doc-card__top">
+              <div class="doc-icon font-tech">PDF</div>
+              <div>
+                <h4>워시 (WASHI) 제품소개서</h4>
+                <p>스마트 직립형 스크러버 드라이어 · 14 Pages</p>
+              </div>
+            </div>
+            <div class="doc-actions">
+              <button type="button" class="btn btn-outline btn-sm" onclick="openPdfPreviewModal('washi')">
+                📄 미리보기
+              </button>
+              <a
+                href="./docs/%EC%9B%8C%EC%8B%9C%20%EC%A0%9C%ED%92%88%EC%86%8C%EA%B0%9C%EC%84%9C.pdf"
+                download="워시_제품소개서.pdf"
+                class="btn btn-primary btn-sm"
+                onclick="showToast('📥 워시 제품소개서 다운로드가 시작되었습니다.')"
+              >
+                ⬇️ 다운로드
+              </a>
+            </div>
+          </div>
+
+          <div class="doc-card">
+            <div class="doc-card__top">
+              <div class="doc-icon font-tech">PDF</div>
+              <div>
+                <h4>카고 (KARGO) 제품소개서</h4>
+                <p>300kg 고하중 산업용 AMR 물류로봇 · 17 Pages</p>
+              </div>
+            </div>
+            <div class="doc-actions">
+              <button type="button" class="btn btn-outline btn-sm" onclick="openPdfPreviewModal('kargo')">
+                📄 미리보기
+              </button>
+              <a
+                href="./docs/%EC%B9%B4%EA%B3%A0%20%EC%A0%9C%ED%92%88%EC%86%8C%EA%B0%9C%EC%84%9C.pdf"
+                download="카고_제품소개서.pdf"
+                class="btn btn-primary btn-sm"
+                onclick="showToast('📥 카고 제품소개서 다운로드가 시작되었습니다.')"
+              >
+                ⬇️ 다운로드
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. CONTACT & FREE DEMO APPLICATION -->
+    <section id="contact">
+      <div class="container">
+        <div class="contact-grid">
+          <div>
+            <span class="section-badge">CONTACT &amp; FREE DEMO</span>
+            <h2 style="font-size:2.15rem; font-weight:900; line-height:1.25; margin-bottom:14px;">
+              세림로보틱스와 함께<br />
+              <span class="highlight">스마트 로봇 솔루션</span>을 설계하세요
+            </h2>
+            <p style="color:var(--text-secondary); margin-bottom:20px;">
+              현장 환경 진단부터 무료 시연(체험 신청), 구매·렌탈 맞춤 견적, 사후 A/S까지 세림로보틱스 전문 엔지니어가 직접 지원합니다.
+            </p>
+
+            <div class="contact-info-list">
+              <div class="contact-info-item" style="display:flex; justify-content:space-between; align-items:center;">
+                <div>
+                  <span>대표 상담전화 (빠른 견적·시연 문의)</span>
+                  <strong class="font-tech" style="font-size:1.35rem;">1800-9633</strong>
+                </div>
+                <button type="button" class="btn btn-secondary btn-sm" onclick="handlePhoneAction('1800-9633')">
+                  번호 복사
+                </button>
+              </div>
+              <div class="contact-info-item">
+                <span>로보틱스 사업본부</span>
+                <strong style="font-size:0.96rem;">경기도 용인시 기흥구 구성로 357 용인테크노밸리 D동 206호</strong>
+              </div>
+              <div class="contact-info-item">
+                <span>(주)세림B&amp;G 본사</span>
+                <strong style="font-size:0.96rem;">경기도 평택시 오성면 오성북로 154-51 (사업자등록번호: 262-87-01457)</strong>
+              </div>
+              <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:4px;">
+                <a
+                  href="https://www.serimrobotics.co.kr/application/application.html"
+                  target="_blank"
+                  rel="noopener"
+                  class="btn btn-outline btn-sm"
+                >
+                  공식 홈페이지 체험신청 ↗
+                </a>
+                <a
+                  href="https://www.serimrobotics.co.kr/inquiry/inquiry__1.html"
+                  target="_blank"
+                  rel="noopener"
+                  class="btn btn-outline btn-sm"
+                >
+                  공식 빠른상담 게시판 ↗
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <form class="contact-form" id="serimContactForm">
+            <div class="form-group">
+              <label>문의 유형 (클릭하여 선택) <span>*</span></label>
+              <div class="radio-pills">
+                <label class="radio-pill">
+                  <input type="radio" name="inquiryType" value="무료 체험·시연 신청" checked />
+                  <span>무료 체험·시연 신청</span>
+                </label>
+                <label class="radio-pill">
+                  <input type="radio" name="inquiryType" value="렌탈·구매 견적문의" />
+                  <span>렌탈·구매 견적문의</span>
+                </label>
+                <label class="radio-pill">
+                  <input type="radio" name="inquiryType" value="고객지원·A/S신청" />
+                  <span>고객지원·A/S신청</span>
+                </label>
+                <label class="radio-pill">
+                  <input type="radio" name="inquiryType" value="파트너십 제휴" />
+                  <span>파트너십 제휴</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="uname">담당자 성함 / 직함 <span>*</span></label>
+                <input
+                  type="text"
+                  id="uname"
+                  name="uname"
+                  class="form-control"
+                  placeholder="예: 홍길동 팀장"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="utel">연락처 <span>*</span></label>
+                <input
+                  type="tel"
+                  id="utel"
+                  name="utel"
+                  class="form-control"
+                  placeholder="예: 010-1234-5678"
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="ucompany">업체명 및 현장 주소 <span>*</span></label>
+                <input
+                  type="text"
+                  id="ucompany"
+                  name="ucompany"
+                  class="form-control"
+                  placeholder="업체명 및 도입 예정 지역을 입력해주세요"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="interestRobotSelect">관심 로봇 모델 <span>*</span></label>
+                <select id="interestRobotSelect" name="robot" class="form-control">
+                  <option value="더스티 (DUSTI)">더스티 (DUSTI) - 초대형 건식 AI 청소로봇</option>
+                  <option value="더스티 프로 (DUSTI PRO)">더스티 프로 (DUSTI PRO) - 3-in-1 진공 청소로봇</option>
+                  <option value="스위피 (SWEEPI)">스위피 (SWEEPI) - 4-in-1 습·건식 청소로봇</option>
+                  <option value="스위피 프로 (SWEEPI PRO)">스위피 프로 (SWEEPI PRO) - 전·후면 AI 자율 청소로봇</option>
+                  <option value="워시 (WASHI)">워시 (WASHI) - 직립형 스마트 스크러버</option>
+                  <option value="카고 (KARGO)">카고 (KARGO) - 300kg 산업용 물류로봇</option>
+                  <option value="복수 모델 / 현장 맞춤 제안 요청">복수 모델 / 현장 방문 후 맞춤 제안 요청</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="ucontent">현장 규모 및 문의 내용 <span>*</span></label>
+              <textarea
+                id="ucontent"
+                name="ucontent"
+                rows="4"
+                class="form-control"
+                placeholder="업종, 대략적인 평수(㎡), 바닥 재질 또는 운반 물품 등 궁금하신 사항을 자유롭게 작성해 주세요."
+                required
+              ></textarea>
+            </div>
+
+            <div class="form-group" style="display:flex; align-items:center; gap:10px; font-size:0.86rem; color:var(--text-secondary);">
+              <input type="checkbox" id="privacyAgree" required style="accent-color:var(--accent-primary); width:16px; height:16px; cursor:pointer;" />
+              <label for="privacyAgree" style="margin:0; font-weight:600; cursor:pointer;">
+                개인정보 보호정책에 따라 상담 및 견적 안내를 위한 개인정보 수집·이용에 동의합니다.
+              </label>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width:100%; padding:15px; font-size:1.02rem;">
+              맞춤 상담 및 무료 시연 신청하기 →
+            </button>
+
+            <div id="formFeedback" style="display:none;"></div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 1. Product Detail Modal -->
+  <div class="modal-backdrop" id="productModal" role="dialog" aria-modal="true" aria-label="제품 상세 정보">
+    <div class="modal-dialog">
+      <button type="button" class="modal-close" onclick="closeAllModals()" aria-label="모달 닫기">✕</button>
+      <div id="modalBodyContent"></div>
+    </div>
+  </div>
+
+  <!-- 2. In-Page PDF Viewer Modal -->
+  <div class="modal-backdrop" id="pdfModal" role="dialog" aria-modal="true" aria-label="PDF 제품소개서 뷰어">
+    <div class="modal-dialog" style="max-width: 1080px;">
+      <button type="button" class="modal-close" onclick="closeAllModals()" aria-label="모달 닫기">✕</button>
+      <div id="pdfModalContent"></div>
+    </div>
+  </div>
+
+  <!-- 3. Official Video Player Modal -->
+  <div class="modal-backdrop" id="videoModal" role="dialog" aria-modal="true" aria-label="공식 홍보영상 플레이어">
+    <div class="modal-dialog" style="max-width: 960px;">
+      <button type="button" class="modal-close" onclick="closeAllModals()" aria-label="모달 닫기">✕</button>
+      <div id="videoModalContent"></div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div>
+          <strong style="color:#fff; font-size:1.2rem; display:block; margin-bottom:6px;">
+            (주)세림B&amp;G · 세림로보틱스 사업본부
+          </strong>
+          <p>다양한 산업을 위한 맞춤형 스마트 로봇 솔루션 (청소로봇 · 물류로봇 · 서빙로봇)</p>
+        </div>
+        <div class="footer-Quick-links">
+          <a href="https://www.serimrobotics.co.kr/main/main.html" target="_blank" rel="noopener">공식 홈페이지</a>
+          <a href="https://www.serimrobotics.co.kr/product/robot__3.html" target="_blank" rel="noopener">제품소개</a>
+          <a href="https://www.serimrobotics.co.kr/solution/solution.html" target="_blank" rel="noopener">솔루션</a>
+          <a href="https://www.serimrobotics.co.kr/application/application.html" target="_blank" rel="noopener">체험신청</a>
+          <a href="https://www.serimrobotics.co.kr/customer/customer__3.html" target="_blank" rel="noopener">자료실</a>
+        </div>
+      </div>
+      <div style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:16px; color:#64748b; font-size:0.84rem;">
+        <div>
+          <p>TEL : 1800-9633 | 사업자등록번호 : 262-87-01457</p>
+          <p>본사 : 경기도 평택시 오성면 오성북로 154-51 | 로보틱스 사업본부 : 경기도 용인시 기흥구 구성로 357 용인테크노밸리 D동 206호</p>
+        </div>
+        <div>
+          <p>Copyright © serimrobotics co.,ltd. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Quick Buttons -->
+  <div class="floating-cta">
+    <button type="button" class="floating-btn floating-btn--tel font-tech" onclick="handlePhoneAction('1800-9633')">
+      📞 1800-9633
+    </button>
+    <a href="#top" class="floating-btn floating-btn--top" aria-label="맨 위로 이동">
+      ↑ TOP
+    </a>
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+</html>
